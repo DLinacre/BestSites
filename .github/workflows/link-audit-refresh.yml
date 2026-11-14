@@ -1,0 +1,48 @@
+name: Refresh audited links on this branch
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: atlas-link-refresh-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --legacy-peer-deps
+      - name: Check all resource URLs and preserve history
+        run: npm run check:links:update
+        env:
+          LINK_CHECK_CONCURRENCY: 8
+          LINK_CHECK_TIMEOUT: 10000
+      - name: Validate complete result set
+        run: npx tsx -e "import {readFileSync} from 'node:fs';import {resources} from './src/lib/resources';const d=JSON.parse(readFileSync('src/data/link-status.json','utf8'));if(d.version!==1||Object.keys(d.resources).length!==resources.length||resources.some(r=>!d.resources[r.id]))throw new Error('Audit does not cover every resource');console.log('Audited resource records:',Object.keys(d.resources).length)"
+      - name: Publish report as workflow summary
+        run: cat LINK_AUDIT.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-link-audit-refresh-${{ github.run_number }}
+          path: |
+            LINK_AUDIT.md
+            src/data/link-status.json
+          retention-days: 90
+      - name: Commit complete audit to the dispatched branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add LINK_AUDIT.md src/data/link-status.json
+          if git diff --cached --quiet; then
+            echo "Audit results match the current branch; nothing to commit."
+          else
+            git commit -m "Refresh resource link audit"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

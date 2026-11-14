@@ -34,7 +34,7 @@ One editorial pick is identified for each category in `src/lib/resources.ts`. Th
 | Music & audio | [Bandcamp](https://bandcamp.com/) | Artist-first discovery; many releases can be streamed free, with optional purchases supporting creators. |
 | Gaming & play | [itch.io — free games](https://itch.io/games/free) | Direct-to-creator discovery with free releases and creator-controlled distribution. |
 | Books & reading | [Project Gutenberg](https://www.gutenberg.org/) | Long-running volunteer library with a clear public-domain focus and downloadable ebooks. |
-| Software & downloads | [GitHub](https://github.com/) | Explore projects from maintainers and inspect source, history and releases directly. |
+| Software & downloads | [AlternativeTo](https://alternativeto.net/) | Compare community-suggested software alternatives by platform and licence; use the directory to discover options, then verify downloads at the official publisher. |
 | Torrenting & open data | [qBittorrent](https://www.qbittorrent.org/) | Cross-platform, established open-source client without bundled advertising. Use only for lawful torrents. |
 | Learning & education | [Khan Academy](https://www.khanacademy.org/) | Respected nonprofit with structured free instruction and practice across core subjects. |
 | Android & iOS | [F-Droid](https://f-droid.org/) | Free-software-first Android repository with transparent source and build practices. |
@@ -46,7 +46,7 @@ One editorial pick is identified for each category in `src/lib/resources.ts`. Th
 
 The dataset is a curated snapshot, not a live API feed. `src/lib/resources.ts` contains original summaries, categorisation, platforms, tags, pricing and open-source flags. `sourceCategoryUrl` ties each listing to its FMHY research section. `src/data/link-status.json` is the result store populated by the reusable audit script. An empty entry is shown as **Not checked** until an audit actually records a result.
 
-Pricing and platform availability can vary by country, product plan and date. Descriptions state known caveats where material: libraries may require a participating membership; free tiers can have limits; item-level rights and licences can differ; and geographic availability applies to some streaming sites. Readers should check a service’s own terms, privacy policy, publisher and licence. An open-source marker refers to the project/service software, not merely to the fact that content is free or openly licensed.
+Pricing and platform availability can vary by country, product plan and date. Every resource has an explicit `availability` field; it remains `unknown` until we have verified regional evidence rather than guessing from a site's language or global-looking domain. The current directory intentionally marks all 104 entries as unknown. Access notes disclose known eligibility such as participating-library access for Kanopy, phone-number registration for Signal, and account/region caveats for Google AI Studio. These notes are not a substitute for the provider’s current terms. Readers should check a service’s terms, privacy policy, publisher and licence. An open-source marker refers to the project/service software, not merely to the fact that content is free or openly licensed.
 
 ## Link audit
 

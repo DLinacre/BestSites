@@ -1,0 +1,5 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {getSiteOrigin} from '../src/lib/site-url';
+test('canonical origin follows explicit, Vercel, and local environment defaults',()=>{assert.equal(getSiteOrigin({NEXT_PUBLIC_SITE_URL:'https://atlas.example/',NODE_ENV:'production'} as NodeJS.ProcessEnv),'https://atlas.example');assert.equal(getSiteOrigin({VERCEL_URL:'atlas-preview.vercel.app',NODE_ENV:'production',VERCEL:'1'} as NodeJS.ProcessEnv),'https://atlas-preview.vercel.app');assert.equal(getSiteOrigin({NODE_ENV:'development'} as NodeJS.ProcessEnv),'http://localhost:3000')});
+test('canonical origin rejects non-origin and insecure configured production URLs',()=>{assert.throws(()=>getSiteOrigin({NEXT_PUBLIC_SITE_URL:'https://atlas.example/path',NODE_ENV:'production'} as NodeJS.ProcessEnv),/origin only/);assert.throws(()=>getSiteOrigin({NEXT_PUBLIC_SITE_URL:'http://atlas.example',NODE_ENV:'production'} as NodeJS.ProcessEnv),/HTTPS/);assert.throws(()=>getSiteOrigin({VERCEL:'1',NODE_ENV:'production'} as NodeJS.ProcessEnv),/require NEXT_PUBLIC_SITE_URL or VERCEL_URL/)});

@@ -1,0 +1,66 @@
+name: Atlas CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: atlas-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  quality:
+    name: Type, lint, tests, build, browser and accessibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --legacy-peer-deps
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm audit --audit-level=moderate
+      - run: npm run build
+      - id: install-browser
+        run: npx playwright install --with-deps chromium
+      - name: Run Playwright end-to-end tests
+        run: |
+          set +e
+          npm run test:e2e > /tmp/atlas-e2e.log 2>&1
+          result=$?
+          cat /tmp/atlas-e2e.log
+          if [ "$result" -ne 0 ]; then
+            echo '## Playwright failure details' >> "$GITHUB_STEP_SUMMARY"
+            tail -n 160 /tmp/atlas-e2e.log >> "$GITHUB_STEP_SUMMARY"
+            grep -E '^[[:space:]]*[0-9]+\)|Error:|Expected:|Received:|Timeout|failed|not.to|toHave|strict mode|PAGEERROR|AXE_VIOLATIONS' /tmp/atlas-e2e.log | head -n 50 | while IFS= read -r line; do echo "::error title=Playwright failure::$line"; done
+          fi
+          exit "$result"
+      - name: Run axe accessibility checks
+        if: ${{ always() && steps.install-browser.outcome == 'success' }}
+        run: |
+          set +e
+          npm run test:a11y > /tmp/atlas-a11y.log 2>&1
+          result=$?
+          cat /tmp/atlas-a11y.log
+          if [ "$result" -ne 0 ]; then
+            echo '## Accessibility failure details' >> "$GITHUB_STEP_SUMMARY"
+            tail -n 160 /tmp/atlas-a11y.log >> "$GITHUB_STEP_SUMMARY"
+            grep -E 'Error:|Expected:|Received:|violations|serious|critical|pageerror' /tmp/atlas-a11y.log | head -n 50 | while IFS= read -r line; do echo "::error title=Accessibility failure::$line"; done
+          fi
+          exit "$result"
+      - name: Preserve browser reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-browser-test-report-${{ github.run_number }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14

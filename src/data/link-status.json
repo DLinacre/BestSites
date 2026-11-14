@@ -1,834 +1,1253 @@
 {
-  "firefox-focus": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "ublock-origin": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://github.com/gorhill/uBlock",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "signal": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "eff-surveillance-self-defense": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "have-i-been-pwned": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "quad9": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "ollama": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://ollama.com/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "google-ai-studio": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "privacy-guides": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "hugging-face": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "perplexity": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "privacy-badger": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "whisper": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "comfyui": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "codeium-windsurf": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "elicit": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "kanopy": {
-    "status": "redirected",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://www.kanopy.com/en",
-    "note": "Retrieved the destination after a same-site redirect; HTTP response code was not exposed by the fetch tool."
-  },
-  "pbs": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "pluto-tv": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "library-of-congress-national-screening-room": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "tubi": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "justwatch": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "the-roku-channel": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "bandcamp": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://bandcamp.com/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "retrocrush": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "internet-archive-live-music": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "free-music-archive": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "jamendo": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "npr-music": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "musopen": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "audacity": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "radio-garden": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "internet-archive-console-living-room": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "itch-io": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://itch.io/games/free",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "openra": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "godot-engine": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "0-a-d": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "board-game-arena": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "project-gutenberg": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://www.gutenberg.org/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "lichess": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "l-ve": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "wikisource": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "digital-public-library-of-america": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "directory-of-open-access-books": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "libretexts": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "standard-ebooks": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "calibre": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "github": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://github.com/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "libby": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "ninite": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "openalternative": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "fosshub": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "portableapps-com": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "release-notifications": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "qbittorrent": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://www.qbittorrent.org/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "homebrew": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "sourceforge": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "transmission": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "debian-cd-images": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "ubuntu-downloads": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "internet-archive-torrents": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "academic-torrents": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "khan-academy": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://www.khanacademy.org/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "biglybt": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "mit-opencourseware": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "openlearn": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "freecodecamp": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "phet-interactive-simulations": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "linux-mint-torrents": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "gapminder": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "openstax": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "memrise": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "f-droid": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://f-droid.org/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "aurora-store": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "google-play": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "apple-app-store": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "apple-developer-documentation": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "android-developers": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "openstreetmap-osmand": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "flathub": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "nix": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "droid-ify": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "gnome-extensions": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "nixos-wiki": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "distrowatch": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "bottles": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "macports": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "archwiki": {
-    "status": "redirected",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://wiki.archlinux.org/title/Main_page",
-    "note": "Retrieved the destination after a same-site redirect; HTTP response code was not exposed by the fetch tool."
-  },
-  "wiktionary": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://www.wiktionary.org/",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "duolingo": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "bbc-languages-archive": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "wikimedia-commons": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "europeana": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "arabic-collections-online": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "rfi-savoirs": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "awesome-lists": {
-    "status": "verified",
-    "checkedAt": "2026-11-14T18:26:25Z",
-    "method": "web-content-fetch",
-    "httpStatus": null,
-    "finalUrl": "https://github.com/sindresorhus/awesome",
-    "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool."
-  },
-  "kagi-small-web": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "wayback-machine": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "openverse": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "our-world-in-data": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "openstreetmap": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "alternativeto": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "deutsche-welle-learn-german": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
-  },
-  "the-useless-web": {
-    "status": "blocked",
-    "checkedAt": "2026-11-14T18:25:50.600Z",
-    "method": "http-head-get",
-    "httpStatus": null,
-    "finalUrl": null,
-    "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken."
+  "version": 1,
+  "resources": {
+    "firefox-focus": {
+      "resourceId": "firefox-focus",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "ublock-origin": {
+      "resourceId": "ublock-origin",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://github.com/gorhill/uBlock",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "signal": {
+      "resourceId": "signal",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "eff-surveillance-self-defense": {
+      "resourceId": "eff-surveillance-self-defense",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "have-i-been-pwned": {
+      "resourceId": "have-i-been-pwned",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "quad9": {
+      "resourceId": "quad9",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "ollama": {
+      "resourceId": "ollama",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://ollama.com/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "google-ai-studio": {
+      "resourceId": "google-ai-studio",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "privacy-guides": {
+      "resourceId": "privacy-guides",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "hugging-face": {
+      "resourceId": "hugging-face",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "perplexity": {
+      "resourceId": "perplexity",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "privacy-badger": {
+      "resourceId": "privacy-badger",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "whisper": {
+      "resourceId": "whisper",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "comfyui": {
+      "resourceId": "comfyui",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "codeium-windsurf": {
+      "resourceId": "codeium-windsurf",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "elicit": {
+      "resourceId": "elicit",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "kanopy": {
+      "resourceId": "kanopy",
+      "status": "redirected",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://www.kanopy.com/en",
+      "note": "Retrieved the destination after a same-site redirect; HTTP response code was not exposed by the fetch tool.",
+      "redirected": true,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "pbs": {
+      "resourceId": "pbs",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "pluto-tv": {
+      "resourceId": "pluto-tv",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "library-of-congress-national-screening-room": {
+      "resourceId": "library-of-congress-national-screening-room",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "tubi": {
+      "resourceId": "tubi",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "justwatch": {
+      "resourceId": "justwatch",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "the-roku-channel": {
+      "resourceId": "the-roku-channel",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "bandcamp": {
+      "resourceId": "bandcamp",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://bandcamp.com/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "retrocrush": {
+      "resourceId": "retrocrush",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "internet-archive-live-music": {
+      "resourceId": "internet-archive-live-music",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "free-music-archive": {
+      "resourceId": "free-music-archive",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "jamendo": {
+      "resourceId": "jamendo",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "npr-music": {
+      "resourceId": "npr-music",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "musopen": {
+      "resourceId": "musopen",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "audacity": {
+      "resourceId": "audacity",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "radio-garden": {
+      "resourceId": "radio-garden",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "internet-archive-console-living-room": {
+      "resourceId": "internet-archive-console-living-room",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "itch-io": {
+      "resourceId": "itch-io",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://itch.io/games/free",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "openra": {
+      "resourceId": "openra",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "godot-engine": {
+      "resourceId": "godot-engine",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "0-a-d": {
+      "resourceId": "0-a-d",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "board-game-arena": {
+      "resourceId": "board-game-arena",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "project-gutenberg": {
+      "resourceId": "project-gutenberg",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://www.gutenberg.org/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "lichess": {
+      "resourceId": "lichess",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "l-ve": {
+      "resourceId": "l-ve",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "wikisource": {
+      "resourceId": "wikisource",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "digital-public-library-of-america": {
+      "resourceId": "digital-public-library-of-america",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "directory-of-open-access-books": {
+      "resourceId": "directory-of-open-access-books",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "libretexts": {
+      "resourceId": "libretexts",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "standard-ebooks": {
+      "resourceId": "standard-ebooks",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "calibre": {
+      "resourceId": "calibre",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "github": {
+      "resourceId": "github",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://github.com/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "libby": {
+      "resourceId": "libby",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "ninite": {
+      "resourceId": "ninite",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "openalternative": {
+      "resourceId": "openalternative",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "fosshub": {
+      "resourceId": "fosshub",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "portableapps-com": {
+      "resourceId": "portableapps-com",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "release-notifications": {
+      "resourceId": "release-notifications",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "qbittorrent": {
+      "resourceId": "qbittorrent",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://www.qbittorrent.org/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "homebrew": {
+      "resourceId": "homebrew",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "sourceforge": {
+      "resourceId": "sourceforge",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "transmission": {
+      "resourceId": "transmission",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "debian-cd-images": {
+      "resourceId": "debian-cd-images",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "ubuntu-downloads": {
+      "resourceId": "ubuntu-downloads",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "internet-archive-torrents": {
+      "resourceId": "internet-archive-torrents",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "academic-torrents": {
+      "resourceId": "academic-torrents",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "khan-academy": {
+      "resourceId": "khan-academy",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://www.khanacademy.org/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "biglybt": {
+      "resourceId": "biglybt",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "mit-opencourseware": {
+      "resourceId": "mit-opencourseware",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "openlearn": {
+      "resourceId": "openlearn",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "freecodecamp": {
+      "resourceId": "freecodecamp",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "phet-interactive-simulations": {
+      "resourceId": "phet-interactive-simulations",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "linux-mint-torrents": {
+      "resourceId": "linux-mint-torrents",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "gapminder": {
+      "resourceId": "gapminder",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "openstax": {
+      "resourceId": "openstax",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "memrise": {
+      "resourceId": "memrise",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "f-droid": {
+      "resourceId": "f-droid",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://f-droid.org/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "aurora-store": {
+      "resourceId": "aurora-store",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "google-play": {
+      "resourceId": "google-play",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "apple-app-store": {
+      "resourceId": "apple-app-store",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "apple-developer-documentation": {
+      "resourceId": "apple-developer-documentation",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "android-developers": {
+      "resourceId": "android-developers",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "openstreetmap-osmand": {
+      "resourceId": "openstreetmap-osmand",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "flathub": {
+      "resourceId": "flathub",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "nix": {
+      "resourceId": "nix",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "droid-ify": {
+      "resourceId": "droid-ify",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "gnome-extensions": {
+      "resourceId": "gnome-extensions",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "nixos-wiki": {
+      "resourceId": "nixos-wiki",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "distrowatch": {
+      "resourceId": "distrowatch",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "bottles": {
+      "resourceId": "bottles",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "macports": {
+      "resourceId": "macports",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "archwiki": {
+      "resourceId": "archwiki",
+      "status": "redirected",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://wiki.archlinux.org/title/Main_page",
+      "note": "Retrieved the destination after a same-site redirect; HTTP response code was not exposed by the fetch tool.",
+      "redirected": true,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "wiktionary": {
+      "resourceId": "wiktionary",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://www.wiktionary.org/",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "duolingo": {
+      "resourceId": "duolingo",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "bbc-languages-archive": {
+      "resourceId": "bbc-languages-archive",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "wikimedia-commons": {
+      "resourceId": "wikimedia-commons",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "europeana": {
+      "resourceId": "europeana",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "arabic-collections-online": {
+      "resourceId": "arabic-collections-online",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "rfi-savoirs": {
+      "resourceId": "rfi-savoirs",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "awesome-lists": {
+      "resourceId": "awesome-lists",
+      "status": "verified",
+      "checkedAt": "2026-11-14T18:26:25Z",
+      "method": "web-content-fetch",
+      "httpStatus": null,
+      "finalUrl": "https://github.com/sindresorhus/awesome",
+      "note": "Page content retrieved and relevant destination confirmed using the research browser. HTTP response code was not exposed by the fetch tool.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "kagi-small-web": {
+      "resourceId": "kagi-small-web",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "wayback-machine": {
+      "resourceId": "wayback-machine",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "openverse": {
+      "resourceId": "openverse",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "our-world-in-data": {
+      "resourceId": "our-world-in-data",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "openstreetmap": {
+      "resourceId": "openstreetmap",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "alternativeto": {
+      "resourceId": "alternativeto",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "deutsche-welle-learn-german": {
+      "resourceId": "deutsche-welle-learn-german",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    },
+    "the-useless-web": {
+      "resourceId": "the-useless-web",
+      "status": "blocked",
+      "checkedAt": "2026-11-14T18:25:50.600Z",
+      "method": "http-head-get",
+      "httpStatus": null,
+      "finalUrl": null,
+      "note": "Automated request failed (fetch failed); sandbox outbound policy prevented reaching this host. Status is inconclusive, not broken.",
+      "redirected": false,
+      "crossHostRedirect": false,
+      "history": []
+    }
   }
 }
