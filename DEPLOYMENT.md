@@ -44,7 +44,7 @@ The Chromium/Android `beforeinstallprompt` event is prevented and stored; the na
 
 ## CI and scheduled link checks
 
-`.github/workflows/ci.yml` runs on pushes and PRs to `main`, plus manual dispatch. It uses Node 22, the committed lockfile, and installs Playwright Chromium with Linux system dependencies before running typecheck, lint, unit tests, production build, E2E and accessibility suites. The pre-existing `.github/workflows/link-audit.yml` stays separate and scheduled; it runs the 104 destination checks from GitHub-hosted runners and saves the report/status JSON as a workflow artifact. Audit failure or blocked individual destinations are disclosed, not silently treated as working.
+`.github/workflows/ci.yml` runs on pushes and PRs to `main`, plus manual dispatch. It uses Node 22, the committed lockfile, and installs Playwright Chromium with Linux system dependencies before running typecheck, lint, unit tests, production build, E2E and accessibility suites. The pre-existing `.github/workflows/link-audit.yml` stays separate and scheduled; it runs the 104 destination checks from GitHub-hosted runners and saves the report/status JSON as a workflow artifact, without committing. A separate, explicit `Refresh audited links on this branch` manual workflow can refresh all records, publish the report/artifact and commit results only to the branch from which it was dispatched. Audit failure or blocked individual destinations are disclosed, not silently treated as working.
 
 ## Current deployment status
 
