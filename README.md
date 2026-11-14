@@ -17,7 +17,7 @@ npm ci --legacy-peer-deps
 npm run dev
 ```
 
-Open <http://localhost:3000>. The site works without API keys, paid services, a database, or an account. On first visit, a small install invitation appears; dismissing it is remembered in this browser. The PWA service worker is enabled on HTTPS and localhost.
+Open <http://localhost:3000>. The site works without API keys, paid services, a database, or an account. On first visit, a small install invitation appears; dismissal and installed-app state are respected on this device. The service worker registers only when `window.isSecureContext` is true, including HTTPS and localhost/loopback development.
 
 ## Routes
 
@@ -30,16 +30,19 @@ npm run typecheck
 npm run lint
 npm test                 # data integrity, featured picks and search unit tests
 npm run build
+npm run test:e2e        # requires Playwright Chromium
+npm run test:a11y       # WCAG 2.1 A/AA axe checks
 ```
 
-Browser end-to-end tests live in `e2e/` and cover the home page, 13 category routes, search, category filters, saved resources, install invitation, manifest and mobile navigation. Install a browser once, then run them:
+Browser tests in `e2e/` cover all category routes, canonical redirects and 404s, search, filters, bookmarks, mobile navigation, install-prompt timing, iOS instructions, secure-context service-worker registration, cached offline pages, fallback behavior and cache cleanup. The accessibility spec runs axe against key pages/themes.
 
 ```bash
-npx playwright install chromium
+npx playwright install --with-deps chromium
 npm run test:e2e
+npm run test:a11y
 ```
 
-For a Linux machine missing browser system libraries, use `npx playwright install --with-deps chromium` (requires an administrator). The development sandbox used to assemble this repository has no Chromium system libraries, so the browser suite is included but could not be executed there; the production build, lint, type checks and unit tests were run successfully.
+The dedicated GitHub Actions CI workflow installs Chromium and its Linux dependencies before running both suites. Local browser tests require the same Playwright browser libraries.
 
 ## Search and personal features
 
@@ -51,7 +54,7 @@ For a Linux machine missing browser system libraries, use `npx playwright instal
 
 ## Update resources
 
-Resource records live in [`src/lib/resources.ts`](src/lib/resources.ts). Each record includes its unique ID, HTTPS destination, original description, category/subcategory, resource type, tags, platforms, language, pricing model, open-source designation, featured reason, FMHY research-category URL, link status and last-check timestamp.
+Resource records live in [`src/lib/resources.ts`](src/lib/resources.ts). Each record includes its unique ID, HTTPS destination, original description, category/subcategory, resource type, tags, platforms, language, pricing model, open-source designation, featured reason, FMHY research-category URL, explicit regional-availability value, any known access requirements, and the current link-audit record. Regional availability is `unknown` until verified; it must never be inferred from a site's language or apparent reach. Access notes currently identify participating-library eligibility, phone-number registration and AI Studio account/regional limits where the source descriptions support them.
 
 When adding a record:
 
@@ -61,13 +64,13 @@ When adding a record:
 4. Keep the default link status `not-checked` until an audit records a result.
 5. Run `npm test`, `npm run typecheck`, `npm run lint`, and `npm run check:links`.
 
-The link checker writes `LINK_AUDIT.md`. To update the UI’s status data as well, run:
+The link checker writes `LINK_AUDIT.md`. To atomically update the UI’s structured audit data and report, run:
 
 ```bash
 npm run check:links:update
 ```
 
-Review the generated final destinations and `src/data/link-status.json` before committing. The checker distinguishes working responses, redirects, bot-blocked/inconclusive checks, and broken responses. A 403/429, timeout, or sandbox network restriction is **not** labelled broken. A successful HTTP check does not guarantee that a site is safe, lawful in your jurisdiction, or suitable for a particular use. The scheduled GitHub Action publishes each audit and status JSON as a workflow artifact; it does not silently commit status changes.
+A complete run is required before anything is written. Every current record stores resource ID, status, timestamp, method, HTTP status (or null), final URL, note, and explicit redirect/cross-host flags. New checks append the previous result to bounded history. A failed/incomplete run leaves the existing file untouched; an inconclusive per-link result becomes the latest honest status while keeping prior results in history. The report and UI read the same schema. The checker distinguishes responding destinations, redirects, bot-blocked/inconclusive checks and clear 404/410 failures. A 403/429, timeout, or sandbox network restriction is **not** labelled broken. The scheduled GitHub Action runs with GitHub-hosted outbound access and publishes each audit and status JSON as a workflow artifact; it does not silently commit status changes. Cross-host redirects and suspected parking pages need human review.
 
 ## PWA notes
 

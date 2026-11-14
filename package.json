@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
-    "test:e2e": "playwright test",
+    "test:e2e": "playwright test e2e/directory.spec.ts e2e/pwa.spec.ts",
     "check:links": "tsx scripts/check-links.ts",
     "check:links:update": "tsx scripts/check-links.ts --write",
     "report:links": "tsx scripts/render-audit.ts"

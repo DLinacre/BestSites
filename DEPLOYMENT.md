@@ -1,17 +1,29 @@
-# Deployment to Vercel
+# Vercel deployment readiness
 
-Atlas is a static-first Next.js App Router project with no database, server-only dependency, secrets, paid API or custom runtime. Category pages, home, Saved and About are prerenderable; Vercel serves the app over HTTPS, which is required for service-worker installation outside localhost.
+Atlas is a Next.js App Router application with a static-first build. It needs no database, secret key, paid API or custom runtime. The repository is configured for Vercel’s Next.js preset and includes a separate GitHub Actions CI workflow.
 
-## Deploy using the Vercel dashboard
+## Build configuration
 
-1. Push this repository/branch to the GitHub repository you want Vercel to build, or import the existing repository from the Vercel dashboard.
-2. Select **New Project → Import Git Repository**, choose the repository, and set the root directory to `.`.
-3. Confirm **Next.js** is detected. Build command: `npm run build`. Install command: `npm ci --legacy-peer-deps`. No output directory override is needed.
-4. Once you have selected the production domain, add `NEXT_PUBLIC_SITE_URL` in Vercel’s Production environment. Set it to the canonical origin, for example `https://atlas.your-domain.example` (replace this with your own domain). This origin is used for absolute social metadata and sitemap URLs. Do not leave a sample hostname in production.
-5. Deploy. Confirm the deployment is **Ready**, and open `/`, `/privacy`, `/ai`, `/saved`, `/about`, `/manifest.webmanifest`, `/sw.js`, `/robots.txt` and `/sitemap.xml` on the HTTPS deployment.
-6. In browser DevTools → Application, confirm the manifest and service worker load. Install on Chromium using its native prompt/menu, then use DevTools’ offline mode to confirm a previously loaded category still opens. On iOS, use Safari’s Share → Add to Home Screen.
+- Framework preset: **Next.js** (automatic detection)
+- Root directory: `.`
+- Install command: `npm ci --legacy-peer-deps`
+- Build command: `npm run build`
+- Output directory: leave unset (Vercel manages Next.js output)
+- Required environment variable for a stable custom canonical origin: `NEXT_PUBLIC_SITE_URL=https://<your-chosen-domain>` for Preview and Production as appropriate. Set this to an origin only (scheme + host; no path, query or fragment).
+- No other environment variables or secrets are required. Vercel’s `VERCEL_URL` is used as an HTTPS fallback for its generated deployment hostname; local builds default to `http://localhost:3000`.
 
-## Local production check
+The site-origin helper validates the configured origin, derives metadata’s `metadataBase`, sitemap URLs and the robots sitemap reference from the same value, and rejects non-HTTPS configured production origins. Supply the domain you own; this repository does not invent one. Category canonical URLs are `/{id}`. Legacy duplicate paths `/category/{id}` return permanent redirects; the sitemap lists exactly one category URL each. `/saved` is excluded from the sitemap and robots index directives.
+
+## Deploy from the Vercel dashboard
+
+1. Import `DLinacre/BestSites` into a Vercel project or select an existing Atlas project.
+2. Choose the Next.js framework preset and confirm the commands above.
+3. Set `NEXT_PUBLIC_SITE_URL` to the actual canonical HTTPS origin you control.
+4. Deploy and wait for Vercel to report **Ready**.
+5. Verify the actual deployment: `/`, all 13 category routes, `/category/privacy` (308 to `/privacy`), `/category/not-a-real-category` (404), `/about`, `/saved`, `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`, `/sw.js`, and PWA icon URLs.
+6. In Chromium DevTools → Application, check the manifest, service worker scope and active controller. Install via the native browser prompt after a user action. Load a category, switch offline and revisit it; also check the static `/offline.html` fallback. On iOS Safari, use Share → Add to Home Screen and reopen in standalone mode.
+
+## Local production verification
 
 ```bash
 npm ci --legacy-peer-deps
@@ -22,14 +34,18 @@ npm run build
 npm start
 ```
 
-Visit `http://localhost:3000`. Browsers treat localhost as a secure context for service-worker development. For an HTTPS staging deployment, set `NEXT_PUBLIC_SITE_URL` to its origin.
+`window.isSecureContext` gates service-worker registration. HTTPS is required in production; browsers treat localhost/loopback as secure for local development. `public/manifest.webmanifest`, icons and `public/sw.js` are same-origin public assets.
 
-## PWA/cache notes
+## PWA caching and updates
 
-The manifest and service worker are static files under `public/`. `next.config.ts` makes the worker and manifest revalidate so a changed worker can activate, and the worker keeps versioned same-origin app-shell caches. It never fetches/caches external destination sites or personal bookmark data. Cache keys are versioned (`atlas-shell-v1` in `public/sw.js`); bump this string when changing the offline shell’s cached URL list or cache strategy.
+The service worker uses a versioned same-origin app-shell cache (`atlas-shell-v2` at this revision), precaches the homepage, offline page and 13 category pages, caches subsequently visited same-origin navigations/static assets, and falls back to the route cache then `/offline.html`. It never caches third-party destinations, API responses or local browser storage. When activated, it removes older `atlas-shell-*` caches. Its script and manifest have revalidation headers so the browser can pick up worker and icon changes. Increment the shell version when changing the cache strategy or offline assets.
 
-`beforeinstallprompt` is captured only in supporting browsers and invoked only after a visitor selects Install. iOS/iPadOS uses clear manual Safari instructions. A first-visit invitation is a non-blocking card and its dismissal is remembered locally.
+The Chromium/Android `beforeinstallprompt` event is prevented and stored; the native prompt is called only inside the visitor’s button click. Dismissal is remembered, and `appinstalled`, display-mode standalone and iOS `navigator.standalone` state suppress future invitations. iPhone/iPad Safari gets manual Add to Home Screen instructions. CI includes Playwright installation, worker, install-flow, offline and axe accessibility tests.
+
+## CI and scheduled link checks
+
+`.github/workflows/ci.yml` runs on pushes and PRs to `main`, plus manual dispatch. It uses Node 22, the committed lockfile, and installs Playwright Chromium with Linux system dependencies before running typecheck, lint, unit tests, production build, E2E and accessibility suites. The pre-existing `.github/workflows/link-audit.yml` stays separate and scheduled; it runs the 104 destination checks from GitHub-hosted runners and saves the report/status JSON as a workflow artifact. Audit failure or blocked individual destinations are disclosed, not silently treated as working.
 
 ## Current deployment status
 
-The connected Vercel account was checked during this build; no existing Vercel project matching this repository was returned. The integration explicitly does not permit silently creating a project when none is linked, so **Atlas has not been deployed and no live URL is claimed**. To publish, import this repository into a Vercel project using the steps above, or connect the appropriate existing Vercel project in Arena and request a deployment. Once Vercel returns a Ready deployment, verify it before sharing its URL.
+Vercel project listings were checked for both `BestSites` and `Atlas`; no matching project was returned. **No Atlas deployment is configured or verified, and no live URL is claimed.** Create/import the Vercel project and set its actual canonical domain as above before launch. After deployment, confirm its state and test the returned production URL before sharing it.
