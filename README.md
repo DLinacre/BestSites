@@ -1,6 +1,14 @@
+<p align="center">
+  <img src="public/og-image.svg" alt="Atlas — thoughtfully curated free websites, tools and resources" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/DLinacre/BestSites/actions/workflows/ci.yml"><img src="https://github.com/DLinacre/BestSites/actions/workflows/ci.yml/badge.svg" alt="Atlas CI status" /></a>
+</p>
+
 # Atlas — free to explore
 
-Atlas is an independently branded, installable directory of useful free websites, software and resources. It has 13 dedicated category pages and 104 curated destinations, a keyboard-accessible global search, bookmarks and history stored on-device, three themes, link-status disclosures, and an offline-capable PWA shell.
+An independently branded, installable directory of useful free websites, software and resources. Atlas has 13 category pages and 104 curated destinations, keyboard-accessible global search, device-local bookmarks and history, three themes, link-status disclosures, and an offline-capable PWA shell.
 
 Atlas was inspired by the breadth and category organisation of [FMHY](https://fmhy.net/), but is a separate project with its own identity, descriptions, recommendations and lawful-content standards. It is not affiliated with or endorsed by FMHY.
 
