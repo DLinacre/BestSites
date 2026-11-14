@@ -38,11 +38,22 @@ jobs:
           if [ "$result" -ne 0 ]; then
             echo '## Playwright failure details' >> "$GITHUB_STEP_SUMMARY"
             tail -n 160 /tmp/atlas-e2e.log >> "$GITHUB_STEP_SUMMARY"
-            grep -E '^[[:space:]]*[0-9]+\)|Error:|Expected:|Received:|Timeout|failed|not.to|toHave|strict mode' /tmp/atlas-e2e.log | head -n 50 | while IFS= read -r line; do echo "::error title=Playwright failure::$line"; done
+            grep -E '^[[:space:]]*[0-9]+\)|Error:|Expected:|Received:|Timeout|failed|not.to|toHave|strict mode|PAGEERROR|BROWSER_ERROR' /tmp/atlas-e2e.log | head -n 50 | while IFS= read -r line; do echo "::error title=Playwright failure::$line"; done
           fi
           exit "$result"
-      - if: ${{ always() && steps.install-browser.outcome == 'success' }}
-        run: npm run test:a11y
+      - name: Run axe accessibility checks
+        if: ${{ always() && steps.install-browser.outcome == 'success' }}
+        run: |
+          set +e
+          npm run test:a11y > /tmp/atlas-a11y.log 2>&1
+          result=$?
+          cat /tmp/atlas-a11y.log
+          if [ "$result" -ne 0 ]; then
+            echo '## Accessibility failure details' >> "$GITHUB_STEP_SUMMARY"
+            tail -n 160 /tmp/atlas-a11y.log >> "$GITHUB_STEP_SUMMARY"
+            grep -E 'Error:|Expected:|Received:|violations|serious|critical|pageerror' /tmp/atlas-a11y.log | head -n 50 | while IFS= read -r line; do echo "::error title=Accessibility failure::$line"; done
+          fi
+          exit "$result"
       - name: Preserve browser reports on failure
         if: failure()
         uses: actions/upload-artifact@v4
