@@ -1,0 +1,29 @@
+name: Scheduled resource link audit
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 8 * * 1'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --legacy-peer-deps
+      - run: npm run check:links:update
+        env:
+          LINK_CHECK_CONCURRENCY: 8
+          LINK_CHECK_TIMEOUT: 10000
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-link-audit-${{ github.run_number }}
+          path: |
+            LINK_AUDIT.md
+            src/data/link-status.json
+          retention-days: 90

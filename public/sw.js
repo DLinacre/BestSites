@@ -1,0 +1,9 @@
+const VERSION='atlas-shell-v1';
+const SHELL=['/','/about','/saved','/offline.html','/privacy','/ai','/movies','/music','/gaming','/books','/downloads','/torrenting','/education','/mobile','/linux','/international','/misc'];
+self.addEventListener('install',event=>{event.waitUntil((async()=>{const cache=await caches.open(VERSION);for(const url of SHELL){try{await cache.add(new Request(url,{cache:'reload'}))}catch{console.warn('[Atlas SW] Precache skipped:',url)}}await self.skipWaiting()})())});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{for(const name of await caches.keys())if(name.startsWith('atlas-')&&name!==VERSION)await caches.delete(name);await self.clients.claim()})())});
+self.addEventListener('message',event=>{if(event.data?.type==='SKIP_WAITING')self.skipWaiting()});
+self.addEventListener('fetch',event=>{const request=event.request;if(request.method!=='GET')return;const url=new URL(request.url);if(url.origin!==self.location.origin)return;if(url.pathname.startsWith('/api/'))return;
+ if(request.mode==='navigate'){event.respondWith((async()=>{const cache=await caches.open(VERSION);try{const response=await fetch(request);if(response.ok&&response.headers.get('content-type')?.includes('text/html'))await cache.put(url.pathname,response.clone());return response}catch{const cached=await cache.match(url.pathname)||await cache.match('/');return cached||await cache.match('/offline.html')||Response.error()}})());return}
+ if(url.pathname.startsWith('/_next/static/')||url.pathname.endsWith('.svg')||url.pathname.endsWith('.png')||url.pathname.endsWith('.woff2')){event.respondWith((async()=>{const cache=await caches.open(VERSION);const cached=await cache.match(request);if(cached)return cached;try{const response=await fetch(request);if(response.ok)await cache.put(request,response.clone());return response}catch{return cached||Response.error()}})())}
+});

@@ -1,0 +1,4 @@
+import type {Metadata} from 'next';import {notFound} from 'next/navigation';import {CategoryView} from '@/components/category-view';import {categories,getCategory,getResources} from '@/lib/resources';
+export function generateStaticParams(){return categories.map(c=>({id:c.id}))}
+export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;const c=getCategory(id);if(!c)return{};return {title:c.title,description:c.description,alternates:{canonical:`/category/${c.id}`},openGraph:{title:`${c.title} — Atlas`,description:c.intro,images:['/og-image.svg']}}}
+export default async function CategoryPage({params}:{params:Promise<{id:string}>}){const {id}=await params;const category=getCategory(id);if(!category)notFound();return <div id="main-content"><CategoryView category={category} resources={getResources(id)}/></div>}
