@@ -1,5 +1,5 @@
 import {test,expect,devices} from '@playwright/test';
-test.beforeEach(async({page})=>{page.on('pageerror',error=>console.error('PAGEERROR',error.stack||error.message));page.on('console',message=>{if(message.type()==='error')console.error('BROWSER_ERROR',message.text())})});
+test.beforeEach(async({page})=>{page.on('pageerror',error=>console.error('PAGEERROR',error.stack||error.message))});
 
 test('install invitation dismissal persists and the direct install button shows instructions without a native prompt',async({page})=>{
  await page.addInitScript(()=>localStorage.removeItem('atlas-install-dismissed'));await page.goto('/');const welcome=page.getByRole('region',{name:'Install the Atlas app'});await expect(welcome).toBeVisible({timeout:6000});await page.getByRole('button',{name:'Maybe Later'}).click();await expect(welcome).toBeHidden();await page.reload();await expect(welcome).toBeHidden();await page.getByRole('button',{name:'Install'}).click();await expect(page.getByRole('dialog',{name:/Take your resource/i})).toBeVisible();await expect(page.getByRole('button',{name:'Got it'})).toBeVisible();
