@@ -21,8 +21,8 @@ FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
 FONT_DIR = "assets/fonts"
 FORMATS = {
-    "16x9": dict(W=1920, H=1080, fps=30, out="exports/gtavi_piracy_recap_16x9.mp4"),
-    "9x16": dict(W=1080, H=1920, fps=30, out="exports/gtavi_piracy_recap_9x16.mp4"),
+    "16x9": dict(W=1920, H=1080, fps=30, out="../public/video/gtavi_piracy_recap_16x9.mp4"),
+    "9x16": dict(W=1080, H=1920, fps=30, out="../public/video/gtavi_piracy_recap_9x16.mp4"),
 }
 
 # ---------------------------------------------------------------- colours ---

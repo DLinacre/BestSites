@@ -5,8 +5,8 @@ to PC five days after the console launch.
 
 | File | Format | Length |
 | --- | --- | --- |
-| `exports/gtavi_piracy_recap_16x9.mp4` | 1920×1080, 30 fps | ~3:25 |
-| `exports/gtavi_piracy_recap_9x16.mp4` | 1080×1920, 30 fps | ~3:25 |
+| `public/video/gtavi_piracy_recap_16x9.mp4` | 1920×1080, 30 fps | ~3:25 |
+| `public/video/gtavi_piracy_recap_9x16.mp4` | 1080×1920, 30 fps | ~3:25 |
 
 Both are H.264 + AAC, mono 44.1 kHz.
 
@@ -53,5 +53,6 @@ python render.py 16x9 --preview 1:1 build/preview.png   # BEAT:SCENE
 Narration text is not stored in the repo; regenerate or re-record clips into
 `audio/beat1.mp3` … `audio/beat8.mp3` and the timeline follows their durations.
 
-`exports/` is intentionally git-ignored (≈43 MB of media); the files live in the
-workspace rather than in Git history.
+Renders are written straight to `public/video/` so the site at `/video` serves them.
+They are committed (≈43 MB) because the deployed page streams them as static assets;
+keep that in mind before re-running a render, since Git keeps every historical copy.
