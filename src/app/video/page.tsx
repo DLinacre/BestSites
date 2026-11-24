@@ -28,7 +28,7 @@ export default function VideoPage(){
       <Link href="/" className="back-link"><ArrowLeft size={15}/> Back to discovery</Link>
 
       <header className="video-hero">
-        <span className="eyebrow">WATCH · 3 MIN 25</span>
+        <span className="eyebrow">WATCH · 2 MIN 17</span>
         <h1>GTA VI is already<br/><em>on PC.</em></h1>
         <p>
           A narrated recap of the r/Piracy thread about the console build being decompiled to PC five days
@@ -82,9 +82,10 @@ export default function VideoPage(){
         <div>
           <span className="eyebrow">HOW IT WAS MADE</span>
           <p>
-            Generated narration, Reddit-style comment cards quoting the thread, a rolling revenue counter,
-            a mocked decompiler window and a generated lo-fi bed. Both cuts come from the same source, so
-            the scene timing follows the narration.
+            Generated narration over photographic backdrops for each beat: neon coast, cash, an empty
+            security room, a night office, a debate stage, circuitry, an artist's studio and open sea.
+            Reddit-style comment cards quote the thread, with a rolling revenue counter, a mocked
+            decompiler window and a generated lo-fi bed.
           </p>
           <p>
             The build script lives in the repository under <code>video/</code>. Re-run

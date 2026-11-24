@@ -5,14 +5,17 @@ to PC five days after the console launch.
 
 | File | Format | Length |
 | --- | --- | --- |
-| `public/video/gtavi_piracy_recap_16x9.mp4` | 1920×1080, 30 fps | ~3:25 |
-| `public/video/gtavi_piracy_recap_9x16.mp4` | 1080×1920, 30 fps | ~3:25 |
+| `public/video/gtavi_piracy_recap_16x9.mp4` | 1920×1080, 30 fps | 2:17 |
+| `public/video/gtavi_piracy_recap_9x16.mp4` | 1080×1920, 30 fps | 2:17 |
 
 Both are H.264 + AAC, mono 44.1 kHz.
 
 ## What's in it
 
-- Narration: 8 beats, generated voice (not a human recording)
+- Narration: 8 beats, generated voice (not a human recording), paced at 1.15× with
+  pitch preserved (`atempo`, applied to `audio/raw*.mp3` to produce `audio/beat*.mp3`)
+- Backdrops: one photographic scene per beat in `assets/backdrops/`, cropped to the
+  target aspect, colour-graded, dimmed per-beat and moved with a slow ken-burns camera
 - Reddit-style comment cards quoting the thread (usernames shown, text lightly trimmed)
 - Cutaway beats: `$4,000,000,000` counter with revenue vs. dev-cost bars, a mocked
   decompiler window, and a LEGO → Play-Doh diagram for the "console speaks ABC" comment

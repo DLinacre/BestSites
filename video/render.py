@@ -153,6 +153,104 @@ def _smooth_noise(w, h, seed):
     return np.clip(one(300, seed) * 0.55 + one(110, seed + 1) * 0.3 + one(40, seed + 2) * 0.15, 0, 1)
 
 
+# ------------------------------------------------------------- backdrops ---
+# One photographic scene per narration beat. Each is decoded once, cropped to a
+# 16:9 master, graded for the video's dark look, then pushed in/out slowly so the
+# frame keeps drifting instead of sitting still.
+BACKDROPS = {
+    "b1": "assets/backdrops/b1_city.jpg",
+    "b2": "assets/backdrops/b2_money.jpg",
+    "b3": "assets/backdrops/b3_security.jpg",
+    "b4": "assets/backdrops/b4_office.jpg",
+    "b5": "assets/backdrops/b5_debate.jpg",
+    "b6": "assets/backdrops/b6_code.jpg",
+    "b7": "assets/backdrops/b7_studio.jpg",
+    "b8": "assets/backdrops/b8_ocean.jpg",
+}
+_bd = {}
+
+# name -> (extra dim, blur px at 1080p). Busy frames need more help than sparse ones.
+BACKDROP_TREATMENT = {
+    "b1": (0.10, 0),
+    "b2": (0.14, 0),
+    "b3": (0.10, 0),
+    "b4": (0.20, 1),
+    "b5": (0.16, 0),
+    "b6": (0.42, 3),
+    "b7": (0.16, 1),
+    "b8": (0.14, 0),
+}
+
+
+def _grade(im):
+    """Darken, cool the shadows, warm the highlights a little."""
+    a = np.asarray(im.convert("RGB"), dtype=np.float32) / 255.0
+    # gentle S-curve for contrast
+    a = np.clip((a - 0.5) * 1.16 + 0.5, 0, 1) ** 1.04
+    lum = a.mean(axis=2, keepdims=True)
+    # tint: push shadows toward blue, highlights toward warm orange
+    shadow = (1 - lum) ** 2
+    high = lum ** 2
+    a[..., 0] += shadow[..., 0] * 0.02 - high[..., 0] * 0.01
+    a[..., 1] += shadow[..., 0] * 0.01
+    a[..., 2] += shadow[..., 0] * 0.055 + high[..., 0] * 0.01
+    a = np.clip(a * 0.86, 0, 1)
+    return a.astype(np.float32)
+
+
+def backdrop(beat_id, W, H):
+    key = (beat_id, W, H)
+    if key not in _bd:
+        path = BACKDROPS.get(beat_id)
+        if not path or not os.path.exists(path):
+            _bd[key] = None
+        else:
+            im = Image.open(path).convert("RGB")
+            # cover the target aspect, with 12% overscan for the camera move
+            tw, th = int(W * 1.12), int(H * 1.12)
+            src_ratio, dst_ratio = im.width / im.height, tw / th
+            if src_ratio > dst_ratio:
+                nh = im.height
+                nw = int(nh * dst_ratio)
+                im = im.crop(((im.width - nw) // 2, 0, (im.width + nw) // 2, nh))
+            else:
+                nw = im.width
+                nh = int(nw / dst_ratio)
+                top = int((im.height - nh) * 0.42)
+                im = im.crop((0, top, nw, top + nh))
+            im = im.resize((tw, th), Image.LANCZOS)
+            extra_dim, blur_px = BACKDROP_TREATMENT.get(beat_id, (0.12, 0))
+            if blur_px:
+                r = blur_px * (H / 1080.0)
+                im = im.filter(ImageFilter.GaussianBlur(r))
+            graded = _grade(im) * (1.0 - extra_dim)
+            _bd[key] = graded.astype(np.float32)
+    return _bd[key]
+
+
+def camera_frame(beat_id, W, H, beat_t, beat_span, index):
+    """Slow ken-burns on the beat's backdrop: alternate push-in / pull-out."""
+    bd = backdrop(beat_id, W, H)
+    if bd is None:
+        return None
+    prog = max(0.0, min(1.0, beat_t / max(0.1, beat_span)))
+    zoom_dir = 1 if index % 2 == 0 else -1
+    z = 1.0 + zoom_dir * (0.055 * (prog - 0.5))
+    # drift a little sideways and vertically for parallax
+    dx = math.sin(index * 1.7 + prog * 1.2) * 0.018
+    dy = math.cos(index * 0.9 + prog * 0.8) * 0.012
+    th, tw = bd.shape[:2]
+    cw, ch = int(tw / z), int(th / z)
+    cx = int(tw / 2 + dx * tw)
+    cy = int(th / 2 + dy * th)
+    cx = max(cw // 2, min(tw - cw // 2, cx))
+    cy = max(ch // 2, min(th - ch // 2, cy))
+    x0, y0 = cx - cw // 2, cy - ch // 2
+    crop = bd[y0:y0 + ch, x0:x0 + cw]
+    im = Image.fromarray((crop * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR)
+    return im
+
+
 def build_background(W, H):
     """Base gradient + soft glows + faint grid. Per-beat colour blobs are added live."""
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
@@ -692,6 +790,8 @@ def render_group(canvas, sc, t, shake, accent, W, H):
 
 
 def caption_bar(t, text, W, H, accent):
+    if not text:
+        return None
     fs = L.fs["cap"]
     f = inter(800, fs)
     maxw = int(W * (0.88 if not L.portrait else 0.90))
@@ -868,11 +968,17 @@ def main():
             cache[key] = build_scene(go, W, H)
         return cache[key]
 
+    # captions are tied to scenes, not spread evenly across the beat, so the
+    # lower third changes when the picture does
     caps = {}
     for bi, b in enumerate(BEATS):
-        t0, t1 = beats[bi][0][1], beats[bi][-1][2]
         lst = CAPTIONS.get(b["id"], [])
-        caps[bi] = [t0 - 0.7 + (t1 - t0 + 0.7) * i / max(1, len(lst)) for i in range(len(lst))]
+        scs = beats[bi]
+        times = []
+        for i in range(len(lst)):
+            sc = scs[min(i, len(scs) - 1)]
+            times.append(sc[1] + 0.15)
+        caps[bi] = times
 
     # preview mode
     pre = None
@@ -912,12 +1018,21 @@ def main():
         st = t - s0
         accent = ACCENTS[go.get("accent", "orange")]
 
-        base = get_bg(W, H)
-        shift = int(t * 6) % 128
-        canvas = Image.fromarray(base[:, shift:shift + W].copy()).convert("RGBA")
+        beat_span = beats[bi][-1][2] - beats[bi][0][1]
+        beat_t = t - beats[bi][0][1]
+        cam = camera_frame(BEATS[bi]["id"], W, H, beat_t, beat_span, bi)
+        if cam is not None:
+            canvas = cam.convert("RGBA")
+        else:
+            base = get_bg(W, H)
+            shift = int(t * 6) % 128
+            canvas = Image.fromarray(base[:, shift:shift + W].copy()).convert("RGBA")
 
+        if cam is None:
+            base_f = np.asarray(canvas.convert("RGB"), dtype=np.float32)
+            canvas = Image.fromarray(np.clip(base_f, 0, 255).astype(np.uint8)).convert("RGBA")
         # per-beat glow light: added to the base image, drifting slowly
-        s1 = 0.105 + 0.03 * math.sin(t * 0.4)
+        s1 = 0.045 + 0.015 * math.sin(t * 0.4) if cam is not None else 0.105 + 0.03 * math.sin(t * 0.4)
         s2 = 0.045 + 0.02 * math.cos(t * 0.31)
         g1 = glow_blob(W, H, accent)
         g2 = glow_blob(W, H, TEAL)
@@ -929,17 +1044,39 @@ def main():
         oy2 = max(0, min(oy2, 2 * GP))
         ox1 = max(0, min(ox1, 2 * GP))
         ox2 = max(0, min(ox2, 2 * GP))
-        base_f = base[:, shift:shift + W].astype(np.float32)
-        base_f += g1[oy1:oy1 + H, ox1:ox1 + W] * s1
-        base_f += g2[oy2:oy2 + H, ox2:ox2 + W] * s2
+        if cam is None:
+            base_f = base[:, shift:shift + W].astype(np.float32)
+        else:
+            base_f = np.asarray(canvas.convert("RGB"), dtype=np.float32)
+        base_f = base_f + g1[oy1:oy1 + H, ox1:ox1 + W] * s1
+        base_f = base_f + g2[oy2:oy2 + H, ox2:ox2 + W] * s2
         canvas = Image.fromarray(np.clip(base_f, 0, 255).astype(np.uint8)).convert("RGBA")
 
-        if go["kind"] != "card":
+        # the code-marks texture is an opaque layer: only for the procedural fallback
+        if cam is None and go["kind"] != "card":
             fm = floating_marks(W, H, bi)
             off = int(t * 20) % max(1, fm.height - H)
             canvas.alpha_composite(fm.crop((0, off, W, off + H)).convert("RGBA"), (0, 0))
 
         # accent edge + top progress
+        # readability scrim behind cards, and a lighter one under the caption bar
+        if cam is not None:
+            is_card = go["kind"] == "card"
+            # graphic/text scenes get a flat darkening so type keeps its contrast
+            flat = 0.20 if is_card else 0.40
+            if flat:
+                canvas = Image.blend(canvas, Image.new("RGBA", (W, H), (6, 6, 9, 255)), flat)
+            scrim = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            sd = ImageDraw.Draw(scrim)
+            top_h = int(H * (0.26 if is_card else 0.22))
+            bot_h = int(H * (0.28 if is_card else 0.30))
+            top_a = 105 if is_card else 70
+            bot_a = 125 if is_card else 95
+            for i in range(top_h):
+                sd.line([(0, i), (W, i)], fill=(6, 6, 9, int(top_a * (1 - i / top_h) ** 1.6)))
+            for i in range(bot_h):
+                sd.line([(0, H - 1 - i), (W, H - 1 - i)], fill=(6, 6, 9, int(bot_a * (1 - i / bot_h) ** 1.5)))
+            canvas.alpha_composite(scrim)
         ed = ImageDraw.Draw(canvas)
         ed.rectangle([0, 0, max(3, int(W * 0.0035)), H], fill=accent + (140,))
         ed.rectangle([0, 0, int(W * cl(t / TOTAL)), max(5, int(H * 0.005))], fill=accent + (255,))
@@ -952,8 +1089,16 @@ def main():
         sc = cached(bi, si, go)
         render_group(canvas, sc, st, shake, accent, W, H)
 
-        bar = caption_bar(t, next((c for i, c in enumerate(CAPTIONS.get(BEATS[bi]["id"], [])) if t >= caps[bi][i]), None),
-                          W, H, accent) if st > 0.02 else None
+        cap_txt = None
+        for i, c in enumerate(CAPTIONS.get(BEATS[bi]["id"], [])):
+            if t >= caps[bi][i]:
+                cap_txt = c
+        if cap_txt:
+            norm = lambda x: "".join(ch for ch in x.lower() if ch.isalnum())
+            headline = norm(" ".join([go.get("l1", ""), go.get("l2", ""), go.get("l3", "")]))
+            if norm(cap_txt) and norm(cap_txt) in headline:
+                cap_txt = None
+        bar = caption_bar(t, cap_txt, W, H, accent) if st > 0.02 else None
         if bar:
             canvas.alpha_composite(bar[0], bar[1])
 
